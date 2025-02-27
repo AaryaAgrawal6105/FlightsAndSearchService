@@ -62,11 +62,13 @@ catch(error){
     })
 }
 }
+
+   
 const update = async (req , res) => {
     try{
     const response = await cityService.updateCity(req.params.id , req.body);
     return res.status(200).json({
-        data: city,     
+        data: response ,     
         success : true,
         message : "successfully updated a city",
         err : {}
@@ -90,5 +92,6 @@ module.exports = {
     create , 
     destroy , 
     update ,
+    get
 
 }
